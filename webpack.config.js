@@ -100,7 +100,7 @@ const config = {
     new CopyPlugin({
       patterns: [
         { from: './src/img/', to: './img/' },
-        { from: './src/xml/', to: './dist/' }
+        { from: './src/xml/', to: './xml/' }
       ]
     }),
     new MiniCssExtractPlugin({
