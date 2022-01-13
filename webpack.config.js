@@ -99,7 +99,8 @@ const config = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: './src/img/', to: './img/' }
+        { from: './src/img/', to: './img/' },
+        { from: './src/xml/', to: './dist/' }
       ]
     }),
     new MiniCssExtractPlugin({

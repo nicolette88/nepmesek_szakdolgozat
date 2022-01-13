@@ -9,7 +9,35 @@
 </head>
 
 <body>
-    <p>OKÉ</p>
+    <button type="button" onclick="loadXMLDoc()">Mesék</button>
+    <br><br>
+    <table id="demo"></table>
+
+    <script>
+        function loadXMLDoc() {
+            let xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    myFunction(this);
+                }
+            };
+            let url = "./xml/nepmesek.xml";
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+        }
+        function myFunction(xml) {
+            let i;
+            let xmlDoc = xml.responseXML;
+            let table = "<tr><th>Cím</th></tr>";
+            let x = xmlDoc.getElementsByTagName("div1");
+            for (i = 0; i < x.length; i++) {
+                table += "<tr><td>" +
+                    x[i].getElementsByTagName("head")[0].childNodes[0].nodeValue +
+                    "</td></tr>"
+            }
+            document.getElementById("demo").innerHTML = table;
+        }
+    </script>
 </body>
 
 </html>
