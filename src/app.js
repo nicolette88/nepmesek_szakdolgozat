@@ -1,5 +1,6 @@
 import html from './index.html';
 import './style.css';
+// import './xmlHandler/xmlHandler.js';
 // import './style.scss';
 
 // async function getImage() {
